@@ -9,7 +9,6 @@
 
 #import "BMDefaultUIView.h"
 #import "UIImage+BMScan.h"
-#import "Masonry.h"
 
 @interface BMDefaultUIView ()
 
@@ -28,9 +27,13 @@
     BMDefaultUIView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] firstObject];
 
     [view.areaView addSubview:view.scanImageView1];
-    [view.scanImageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
-    }];
+    view.scanImageView1.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *bottonConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0];
+    [view.areaView addConstraints:@[topConstraint, leftConstraint, bottonConstraint, rightConstraint]];
+    
     view.scanImageView1.hidden = YES;
     view.scanfLinView.hidden = YES;
     view.areaView.clipsToBounds = YES;
@@ -84,7 +87,7 @@
     // 动画持续1.5s
     [self.scanfAreaView layoutIfNeeded];
     
-    animation.duration = 1.3333f * (CGRectGetHeight(self.scanfAreaView.frame) / 170.0) + 0.5;
+    animation.duration = 1.3333f * (CGRectGetHeight(self.scanfAreaView.frame) / 170.0) + 0.8;
     
     CGRectGetMidY(self.scanfAreaView.frame);
     CGRectGetMaxY(self.scanfAreaView.frame);
