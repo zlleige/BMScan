@@ -9,8 +9,12 @@
 [![GitHub stars](https://img.shields.io/github/stars/asiosldh/BMScan.svg)](https://github.com/asiosldh/BMScan/stargazers)
 ## 效果图 
 <img src="image/1.jpeg" width="40%">
-<img src="image/2.jpeg" width="40%">
+<img src="image/2.jpg"  width="40%">
 <img src="image/3.jpeg" width="40%">
+<img src="image/4.jpg"  width="40%">
+<img src="image/5.jpg"  width="40%">
+
+>其中`半透明区域颜色`，`扫描区域尺寸和位置`，`扫描区域4脚的颜色`，`扫描线条的颜色和样式`均可以自定义。
 
 ## CocoaPods
 CocoaPods is the recommended way to add BMScan to your project.

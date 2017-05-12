@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		312203AA1EB8D967009C7FEB /* BMScan.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 312203A91EB8D967009C7FEB /* BMScan.podspec */; };
 		31A4833A1EB5090A005042A9 /* BMScanStyle2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A483381EB5090A005042A9 /* BMScanStyle2VC.m */; };
 		31A4833B1EB5090A005042A9 /* BMScanStyle2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A483391EB5090A005042A9 /* BMScanStyle2VC.xib */; };
 		31C667B71EB579F400AB50D5 /* UIImage+BMScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C667B61EB579F400AB50D5 /* UIImage+BMScan.m */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3108EEF01EB4E75700A3EABF /* BMScanDefaultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMScanDefaultDataSource.h; sourceTree = "<group>"; };
+		312203A91EB8D967009C7FEB /* BMScan.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BMScan.podspec; path = ../BMScan.podspec; sourceTree = "<group>"; };
 		31A483371EB5090A005042A9 /* BMScanStyle2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMScanStyle2VC.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		31A483381EB5090A005042A9 /* BMScanStyle2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMScanStyle2VC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31A483391EB5090A005042A9 /* BMScanStyle2VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMScanStyle2VC.xib; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		32CC41C91EB336F20000E9CC = {
 			isa = PBXGroup;
 			children = (
+				312203A91EB8D967009C7FEB /* BMScan.podspec */,
 				32CC420F1EB338380000E9CC /* BMScan */,
 				32CC41D41EB336F20000E9CC /* BMScanDemo */,
 				32CC41EE1EB336F20000E9CC /* BMScanDemoTests */,
@@ -368,6 +371,7 @@
 				31C667B91EB5AEDB00AB50D5 /* BMScan.bundle in Resources */,
 				32CC41E21EB336F20000E9CC /* Assets.xcassets in Resources */,
 				31A4833B1EB5090A005042A9 /* BMScanStyle2VC.xib in Resources */,
+				312203AA1EB8D967009C7FEB /* BMScan.podspec in Resources */,
 				32CC41E01EB336F20000E9CC /* Main.storyboard in Resources */,
 				32CC42231EB339BB0000E9CC /* BMStyleSelectVC.xib in Resources */,
 				32CC42481EB33E420000E9CC /* BMDefaultUIView.xib in Resources */,
