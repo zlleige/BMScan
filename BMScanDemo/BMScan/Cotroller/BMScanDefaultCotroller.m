@@ -22,13 +22,13 @@
 
 @implementation BMScanDefaultCotroller
 
+
 @dynamic dataSource;
 
 #pragma mark -
 
 - (instancetype)init {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         self.delegate = self;
         self.dataSource = self;
     }
@@ -37,8 +37,12 @@
 
 #pragma mark - 生命周期
 
+- (void)dealloc {
+    NSLog(@"dealloc - BMScanDefaultCotroller");
+}
+
 - (void)viewDidLoad {
-    
+
     [super viewDidLoad];
     [self.view insertSubview:self.scanSettingView atIndex:1];
     self.scanSettingView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -52,8 +56,8 @@
     self.scanSettingView.feetImageView2.image = [UIImage bm_loadImageWithName:@"bm_scan_image_qr_corner_002_@2x"];
     self.scanSettingView.feetImageView3.image = [UIImage bm_loadImageWithName:@"bm_scan_image_qr_corner_003_@2x"];
     self.scanSettingView.feetImageView4.image = [UIImage bm_loadImageWithName:@"bm_scan_image_qr_corner_004_@2x"];
-    self.scanSettingView.scanfLinView.image = [UIImage bm_loadImageWithName:@"bm_scan_image_qr_scan_line@2x"];
-    
+    self.scanSettingView.scanfLinView.image   = [UIImage bm_loadImageWithName:@"bm_scan_image_qr_scan_line@2x"];
+
     if ([self.dataSource respondsToSelector:@selector(areaYInscanController:)]) {
         self.scanSettingView.topLayoutConstraint.constant = [self.dataSource areaYInscanController:self];
     }
@@ -80,14 +84,14 @@
             obj.backgroundColor =  color;
         }];
     }
-    
+
     if ([self.dataSource respondsToSelector:@selector(feetColorInscanController:)]) {
         UIColor *color = [self.dataSource feetColorInscanController:self];
         [self.scanSettingView.feetViewArray enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             obj.image = [obj.image bm_imageWithColor:color];
         }];
     }
-    
+
     if ([self.dataSource respondsToSelector:@selector(leftTopColorInscanController:)]) {
         self.scanSettingView.feetImageView1.image = [self.scanSettingView.feetImageView1.image bm_imageWithColor:[self.dataSource leftTopColorInscanController:self]];
     }
@@ -99,12 +103,36 @@
     if ([self.dataSource respondsToSelector:@selector(rightTopInscanController:)]) {
         self.scanSettingView.feetImageView2.image = [self.scanSettingView.feetImageView2.image bm_imageWithColor:[self.dataSource rightTopInscanController:self]];
     }
-    
+
     if ([self.dataSource respondsToSelector:@selector(rightBottonInscanController:)]) {
         self.scanSettingView.feetImageView4.image = [self.scanSettingView.feetImageView4.image bm_imageWithColor:[self.dataSource rightBottonInscanController:self]];
     }
+    
     if ([self.dataSource respondsToSelector:@selector(scanfLinInscanController:)]) {
         self.scanSettingView.scanfLinView.image = [self.scanSettingView.scanfLinView.image bm_imageWithColor:[self.dataSource scanfLinInscanController:self]];
+    }
+
+    if ([self.dataSource respondsToSelector:@selector(scanLinViewAnimationInscanController:)]) {
+        self.scanSettingView.scanLinViewAnimation = [self.dataSource scanLinViewAnimationInscanController:self];
+    }
+
+    if ([self.dataSource respondsToSelector:@selector(scanLinAnimationInscanController:)]) {
+        BMScanLinAnimation scanLinAnimation = [self.dataSource scanLinAnimationInscanController:self];
+        self.scanSettingView.scanLinAnimation = scanLinAnimation;
+        if (scanLinAnimation == BMScanLinAnimationType1) {
+            return;
+        }
+        if (scanLinAnimation == BMScanLinAnimationType2) {
+            self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_full_net"];
+        } else if (scanLinAnimation == BMScanLinAnimationType3) {
+            self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_part_net"];
+        }
+        if ([self.dataSource respondsToSelector:@selector(feetColorInscanController:)]) {
+            UIColor *color = [self.dataSource feetColorInscanController:self];
+            [self.scanSettingView.feetViewArray enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                self.scanSettingView.scanImageView1.image = [self.scanSettingView.scanImageView1.image bm_imageWithColor:color];
+            }];
+        }
     }
 }
 
@@ -126,6 +154,9 @@
 #pragma mark - 自定义delegate
 
 - (void)scanController:(BMScanController *)scanController captureWithValueString:(NSString *)valueString {
+    if (self.captureSuccessBlock) {
+        self.captureSuccessBlock(self, valueString);
+    }
 }
 
 - (CGRect)rectOfInterestInScanController:(BMScanController *)scanController {
@@ -134,20 +165,22 @@
 }
 
 - (CGFloat)areaXInscanController:(BMScanController *)scanController {
-    NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:self.scanSettingView.areaView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.scanSettingView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
-    NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:self.scanSettingView.areaView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scanSettingView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
-    [self.scanSettingView addConstraints:@[c1, c2]];
-    return 0;
+    return [self addConstraint];
 }
 
 - (CGFloat)areaYInscanController:(BMScanController *)scanController {
+    return [self addConstraint];
+}
+
+#pragma mark - 公有方法
+
+- (CGFloat)addConstraint {
+    
     NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:self.scanSettingView.areaView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.scanSettingView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
     NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:self.scanSettingView.areaView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scanSettingView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
     [self.scanSettingView addConstraints:@[c1, c2]];
     return 0;
 }
-
-#pragma mark - 公有方法
 
 - (void)startScanning {
     [super startScanning];

@@ -8,8 +8,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BMScanDefaultDataSource.h"
 
 @interface BMDefaultUIView : UIView
+
+@property (strong, nonatomic) UIImageView *scanImageView1; ///< 扫描imageView
+
+@property (assign, nonatomic) BMScanLinViewAnimation scanLinViewAnimation; ///< 扫描线动画类型
+@property (assign, nonatomic) BMScanLinAnimation scanLinAnimation; ///< 扫描线动画类型
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftLayoutConstraint;
@@ -33,6 +39,6 @@
 + (instancetype)defaultUIView;
 
 - (void)startAnimation;
-
 - (void)stopAnimation;
+
 @end

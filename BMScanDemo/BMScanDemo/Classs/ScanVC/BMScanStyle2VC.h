@@ -11,4 +11,7 @@
 
 @interface BMScanStyle2VC : BMScanDefaultCotroller
 
+@property (assign, nonatomic) BMScanLinAnimation scanLinAnimation; ///< <#Description#>
+
 @end
+

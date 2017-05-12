@@ -64,4 +64,12 @@
     return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
 }
 
+- (BMScanLinViewAnimation)scanLinViewAnimationInscanController:(BMScanController *)scanController {
+    return arc4random_uniform(4);
+}
+
+- (BMScanLinAnimation)scanLinAnimationInscanController:(BMScanController *)scanController {
+    return self.scanLinAnimation;
+}
+
 @end
