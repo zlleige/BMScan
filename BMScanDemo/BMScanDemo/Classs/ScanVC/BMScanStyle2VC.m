@@ -65,7 +65,11 @@
 }
 
 - (BMScanLinViewAnimation)scanLinViewAnimationInscanController:(BMScanController *)scanController {
-    return BMScanLinViewAnimationTypeCAFillModeForwards;
+    return arc4random_uniform(4);
+}
+
+- (BMScanLinAnimation)scanLinAnimationInscanController:(BMScanController *)scanController {
+    return self.scanLinAnimation;
 }
 
 @end

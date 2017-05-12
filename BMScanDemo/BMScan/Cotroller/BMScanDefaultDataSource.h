@@ -19,6 +19,12 @@ typedef NS_ENUM(NSUInteger, BMScanLinViewAnimation) {
     BMScanLinViewAnimationTypeCAFillModeRemoved,
 };
 
+typedef NS_ENUM(NSUInteger, BMScanLinAnimation) {
+    BMScanLinAnimationType1,
+    BMScanLinAnimationType2,
+    BMScanLinAnimationType3
+};
+
 /**
  BMScanDefaultCotroller 的数据源协议
  */
@@ -133,5 +139,6 @@ typedef NS_ENUM(NSUInteger, BMScanLinViewAnimation) {
  @return 动画值
  */
 - (BMScanLinViewAnimation)scanLinViewAnimationInscanController:(BMScanController *)scanController;
+- (BMScanLinAnimation)scanLinAnimationInscanController:(BMScanController *)scanController;
 
 @end

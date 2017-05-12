@@ -91,7 +91,7 @@
             obj.image = [obj.image bm_imageWithColor:color];
         }];
     }
-    
+
     if ([self.dataSource respondsToSelector:@selector(leftTopColorInscanController:)]) {
         self.scanSettingView.feetImageView1.image = [self.scanSettingView.feetImageView1.image bm_imageWithColor:[self.dataSource leftTopColorInscanController:self]];
     }
@@ -114,6 +114,25 @@
 
     if ([self.dataSource respondsToSelector:@selector(scanLinViewAnimationInscanController:)]) {
         self.scanSettingView.scanLinViewAnimation = [self.dataSource scanLinViewAnimationInscanController:self];
+    }
+
+    if ([self.dataSource respondsToSelector:@selector(scanLinAnimationInscanController:)]) {
+        BMScanLinAnimation scanLinAnimation = [self.dataSource scanLinAnimationInscanController:self];
+        self.scanSettingView.scanLinAnimation = scanLinAnimation;
+        if (scanLinAnimation == BMScanLinAnimationType1) {
+            return;
+        }
+        if (scanLinAnimation == BMScanLinAnimationType2) {
+            self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_full_net"];
+        } else if (scanLinAnimation == BMScanLinAnimationType3) {
+            self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_part_net"];
+        }
+        if ([self.dataSource respondsToSelector:@selector(feetColorInscanController:)]) {
+            UIColor *color = [self.dataSource feetColorInscanController:self];
+            [self.scanSettingView.feetViewArray enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                self.scanSettingView.scanImageView1.image = [self.scanSettingView.scanImageView1.image bm_imageWithColor:color];
+            }];
+        }
     }
 }
 
