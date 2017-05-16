@@ -12,6 +12,9 @@
 @class BMScanController;
 @protocol BMScanDataSource;
 
+/**
+ 参考系统动画 fillMode
+ */
 typedef NS_ENUM(NSUInteger, BMScanLinViewAnimation) {
     BMScanLinViewAnimationTypeCAFillModeForwards,
     BMScanLinViewAnimationTypeCAFillModeBackwards,
@@ -19,10 +22,17 @@ typedef NS_ENUM(NSUInteger, BMScanLinViewAnimation) {
     BMScanLinViewAnimationTypeCAFillModeRemoved,
 };
 
-typedef NS_ENUM(NSUInteger, BMScanLinAnimation) {
-    BMScanLinAnimationType1,
-    BMScanLinAnimationType2,
-    BMScanLinAnimationType3
+/**
+ 扫描线条类型
+
+ - BMScanLinTypeLin: 扫描线
+ - BMScanLinTypeReticular1: 网状1
+ - BMScanLinTypeReticular2: 网状2
+ */
+typedef NS_ENUM(NSUInteger, BMScanLin) {
+    BMScanLinTypeLin,
+    BMScanLinTypeReticular1,
+    BMScanLinTypeReticular2,
 };
 
 /**
@@ -125,7 +135,7 @@ typedef NS_ENUM(NSUInteger, BMScanLinAnimation) {
 - (UIColor *)rightBottonInscanController:(BMScanController *)scanController;
 
 /**
- 扫描线条颜色
+ 扫描线条颜色（扫描条或者什么网均可自定义颜色）
 
  @param scanController 扫描控制器
  @return 颜色值
@@ -139,6 +149,13 @@ typedef NS_ENUM(NSUInteger, BMScanLinAnimation) {
  @return 动画值
  */
 - (BMScanLinViewAnimation)scanLinViewAnimationInscanController:(BMScanController *)scanController;
-- (BMScanLinAnimation)scanLinAnimationInscanController:(BMScanController *)scanController;
+
+/**
+ 扫描线条类型
+
+ @param scanController 扫描控制器
+ @return 扫描线条类型
+ */
+- (BMScanLin)scanLinInscanController:(BMScanController *)scanController;
 
 @end

@@ -10,17 +10,8 @@
 #import "BMScanStyle2VC.h"
 #define kw  [[UIScreen mainScreen] bounds].size.width
 #define kh  [[UIScreen mainScreen] bounds].size.height
-@interface BMScanStyle2VC ()  <BMScanDelegate, BMScanDefaultDataSource>
-
-@end
 
 @implementation BMScanStyle2VC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.delegate = self;
-    self.dataSource = self;
-}
 
 - (void)scanController:(BMScanController *)scanController captureWithValueString:(NSString *)valueString {
     
@@ -68,8 +59,8 @@
     return arc4random_uniform(4);
 }
 
-- (BMScanLinAnimation)scanLinAnimationInscanController:(BMScanController *)scanController {
-    return self.scanLinAnimation;
+- (BMScanLin)scanLinInscanController:(BMScanController *)scanController {
+    return self.scanLin;
 }
 
 @end

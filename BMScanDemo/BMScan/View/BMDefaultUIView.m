@@ -10,10 +10,6 @@
 #import "BMDefaultUIView.h"
 #import "UIImage+BMScan.h"
 
-@interface BMDefaultUIView ()
-
-@end
-
 @implementation BMDefaultUIView
 
 - (UIImageView *)scanImageView1 {
@@ -124,7 +120,7 @@
 - (void)startAnimation {
     [self stopAnimation];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.scanLinAnimation == BMScanLinAnimationType1) {
+        if (self.scanLin == BMScanLinTypeLin) {
             self.scanfLinView.hidden = NO;
             [self.scanfLinView.layer addAnimation:[self getAnimation] forKey:nil];
         } else {
@@ -135,7 +131,7 @@
 }
 
 - (void)stopAnimation {
-    if (self.scanLinAnimation == BMScanLinAnimationType1) {
+    if (self.scanLin == BMScanLinTypeLin) {
         self.scanfLinView.hidden = YES;
         [self.scanfLinView.layer removeAllAnimations];
     } else {

@@ -14,9 +14,10 @@
 #import "BMScanDataSource.h"
 #import "BMScanDelegate.h"
 
-@interface BMScanDefaultCotroller () <BMScanDelegate, BMScanDefaultDataSource>
+@interface BMScanDefaultCotroller ()
 
 @property (strong, nonatomic) BMDefaultUIView *scanSettingView;
+@property (weak, nonatomic) id <BMScanDefaultDataSource> dataSource; ///< 数据源代理（配置信息）
 
 @end
 
@@ -29,7 +30,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.delegate = self;
         self.dataSource = self;
     }
     return self;
@@ -115,16 +115,16 @@
     if ([self.dataSource respondsToSelector:@selector(scanLinViewAnimationInscanController:)]) {
         self.scanSettingView.scanLinViewAnimation = [self.dataSource scanLinViewAnimationInscanController:self];
     }
-
-    if ([self.dataSource respondsToSelector:@selector(scanLinAnimationInscanController:)]) {
-        BMScanLinAnimation scanLinAnimation = [self.dataSource scanLinAnimationInscanController:self];
-        self.scanSettingView.scanLinAnimation = scanLinAnimation;
-        if (scanLinAnimation == BMScanLinAnimationType1) {
+    
+    if ([self.dataSource respondsToSelector:@selector(scanLinInscanController:)]) {
+        BMScanLin scanLin = [self.dataSource scanLinInscanController:self];
+        self.scanSettingView.scanLin = scanLin;
+        if (scanLin == BMScanLinTypeLin) {
             return;
         }
-        if (scanLinAnimation == BMScanLinAnimationType2) {
+        if (scanLin == BMScanLinTypeReticular1) {
             self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_full_net"];
-        } else if (scanLinAnimation == BMScanLinAnimationType3) {
+        } else if (scanLin == BMScanLinTypeReticular2) {
             self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_part_net"];
         }
         if ([self.dataSource respondsToSelector:@selector(feetColorInscanController:)]) {
@@ -154,9 +154,7 @@
 #pragma mark - 自定义delegate
 
 - (void)scanController:(BMScanController *)scanController captureWithValueString:(NSString *)valueString {
-    if (self.captureSuccessBlock) {
-        self.captureSuccessBlock(self, valueString);
-    }
+    [self closureScanning];
 }
 
 - (CGRect)rectOfInterestInScanController:(BMScanController *)scanController {

@@ -10,7 +10,6 @@
 #import <Foundation/Foundation.h>
 
 @class BMScanController;
-@protocol BMScanSource;
 
 /**
  扫描数据源协议

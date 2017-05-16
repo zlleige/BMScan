@@ -8,19 +8,8 @@
 //
 
 #import "BMScanStyle1VC.h"
-#import "BMScanDelegate.h"
-#import "BMScanDefaultDataSource.h"
-
-@interface BMScanStyle1VC () <BMScanDelegate>
-
-@end
 
 @implementation BMScanStyle1VC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.delegate = self;
-}
 
 - (void)scanController:(BMScanController *)scanController captureWithValueString:(NSString *)valueString {
     [self closureScanning];

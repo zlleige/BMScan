@@ -23,20 +23,20 @@
 }
 
 - (IBAction)button2Click {
-    [self pushWithScanLinAnimation:BMScanLinAnimationType1];
+    [self pushWithScanLinAnimation:BMScanLinTypeLin];
 }
 
 - (IBAction)button3Click {
-    [self pushWithScanLinAnimation:BMScanLinAnimationType2];
+    [self pushWithScanLinAnimation:BMScanLinTypeReticular1];
 }
 
 - (IBAction)button4Click {
-    [self pushWithScanLinAnimation:BMScanLinAnimationType3];
+    [self pushWithScanLinAnimation:BMScanLinTypeReticular2];
 }
 
-- (void)pushWithScanLinAnimation:(BMScanLinAnimation)scanLinAnimation {
+- (void)pushWithScanLinAnimation:(BMScanLin)scanLin {
     BMScanStyle2VC *scanStyle2VC = [BMScanStyle2VC new];
-    scanStyle2VC.scanLinAnimation = scanLinAnimation;
+    scanStyle2VC.scanLin = scanLin;
     [self.navigationController pushViewController:scanStyle2VC animated:YES];
 }
 
