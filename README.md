@@ -9,6 +9,7 @@
 [![Weibo](https://img.shields.io/badge/Sina微博-@梁大红-yellow.svg?style=flat)](http://weibo.com/liangdahong) 
 [![GitHub stars](https://img.shields.io/github/stars/asiosldh/BMScan.svg)](https://github.com/asiosldh/BMScan/stargazers)
 ## 效果图 
+<img src="image/6.gif" width="60%">
 <img src="image/1.jpeg" width="40%">
 <img src="image/2.jpg"  width="40%">
 <img src="image/3.jpeg" width="40%">
@@ -188,6 +189,17 @@ pod install
  @return 动画值
  */
 - (BMScanLinViewAnimation)scanLinViewAnimationInscanController:(BMScanController *)scanController;
+```
+
+#### 扫描线条类型
+```c
+/**
+ 扫描线条类型
+
+ @param scanController 扫描控制器
+ @return 扫描线条类型
+ */
+- (BMScanLin)scanLinInscanController:(BMScanController *)scanController;
 ```
 
 #### 可识别区域
