@@ -127,11 +127,9 @@
         } else if (scanLin == BMScanLinTypeReticular2) {
             self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_part_net"];
         }
-        if ([self.dataSource respondsToSelector:@selector(feetColorInscanController:)]) {
-            UIColor *color = [self.dataSource feetColorInscanController:self];
-            [self.scanSettingView.feetViewArray enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                self.scanSettingView.scanImageView1.image = [self.scanSettingView.scanImageView1.image bm_imageWithColor:color];
-            }];
+        if ([self.dataSource respondsToSelector:@selector(scanfLinInscanController:)]) {
+            UIColor *color = [self.dataSource scanfLinInscanController:self];
+            self.scanSettingView.scanImageView1.image = [self.scanSettingView.scanImageView1.image bm_imageWithColor:color];
         }
     }
 }

@@ -11,6 +11,7 @@
 #import "BMScanStyle1VC.h"
 #import "BMScanStyle2VC.h"
 #import "BMScanDefaultCotroller.h"
+#import "BMZDYVC.h"
 
 @interface BMStyleSelectVC ()
 
@@ -40,4 +41,8 @@
     [self.navigationController pushViewController:scanStyle2VC animated:YES];
 }
 
+- (IBAction)zdy:(id)sender {
+    [self.navigationController pushViewController:[BMZDYVC new] animated:YES];
+
+}
 @end
