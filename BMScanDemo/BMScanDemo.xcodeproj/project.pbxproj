@@ -27,6 +27,7 @@
 		32CC42461EB33E420000E9CC /* BMScanDefaultCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CC423F1EB33E420000E9CC /* BMScanDefaultCotroller.m */; };
 		32CC42471EB33E420000E9CC /* BMDefaultUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CC42421EB33E420000E9CC /* BMDefaultUIView.m */; };
 		32CC42481EB33E420000E9CC /* BMDefaultUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32CC42431EB33E420000E9CC /* BMDefaultUIView.xib */; };
+		FD90D701C9F1CD7D777922BE /* libPods-BMScanDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7468172F5DEADCB16802830E /* libPods-BMScanDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,11 @@
 		32CC42431EB33E420000E9CC /* BMDefaultUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMDefaultUIView.xib; sourceTree = "<group>"; };
 		32CC424B1EB33F7C0000E9CC /* BMScanDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMScanDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		32CC424C1EB33F870000E9CC /* BMScanDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMScanDataSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		486DEB02CB9B917F1724D85A /* Pods-BMScanDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMScanDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMScanDemo/Pods-BMScanDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		49334EBECDAF960383AAC03B /* libPods-BMScanDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BMScanDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7468172F5DEADCB16802830E /* libPods-BMScanDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BMScanDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8822AD64FA8031F79C3AF92D /* libPods-BMScanDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BMScanDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4647ED793A186962B1AD8A /* Pods-BMScanDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMScanDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BMScanDemo/Pods-BMScanDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD90D701C9F1CD7D777922BE /* libPods-BMScanDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01DCC1B64D7C9DD46739DB95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				486DEB02CB9B917F1724D85A /* Pods-BMScanDemo.debug.xcconfig */,
+				9B4647ED793A186962B1AD8A /* Pods-BMScanDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		31C667B41EB579D500AB50D5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +145,8 @@
 				32CC41EE1EB336F20000E9CC /* BMScanDemoTests */,
 				32CC41F91EB336F20000E9CC /* BMScanDemoUITests */,
 				32CC41D31EB336F20000E9CC /* Products */,
+				01DCC1B64D7C9DD46739DB95 /* Pods */,
+				EC0EF827CB7C40A74288E1D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,6 +276,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EC0EF827CB7C40A74288E1D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7468172F5DEADCB16802830E /* libPods-BMScanDemo.a */,
+				49334EBECDAF960383AAC03B /* libPods-BMScanDemoTests.a */,
+				8822AD64FA8031F79C3AF92D /* libPods-BMScanDemoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,9 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32CC41FF1EB336F20000E9CC /* Build configuration list for PBXNativeTarget "BMScanDemo" */;
 			buildPhases = (
+				9CD02B7D8825140B8254EA2B /* [CP] Check Pods Manifest.lock */,
 				32CC41CE1EB336F20000E9CC /* Sources */,
 				32CC41CF1EB336F20000E9CC /* Frameworks */,
 				32CC41D01EB336F20000E9CC /* Resources */,
+				CFCF5CD4D004AE7135AD4B04 /* [CP] Embed Pods Frameworks */,
+				AA202980F21EC7585A42B063 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -394,6 +425,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9CD02B7D8825140B8254EA2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA202980F21EC7585A42B063 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BMScanDemo/Pods-BMScanDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFCF5CD4D004AE7135AD4B04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BMScanDemo/Pods-BMScanDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32CC41CE1EB336F20000E9CC /* Sources */ = {
@@ -557,6 +636,7 @@
 		};
 		32CC42001EB336F20000E9CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 486DEB02CB9B917F1724D85A /* Pods-BMScanDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8RB35RM424;
@@ -571,6 +651,7 @@
 		};
 		32CC42011EB336F20000E9CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B4647ED793A186962B1AD8A /* Pods-BMScanDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8RB35RM424;
