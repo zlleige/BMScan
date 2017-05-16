@@ -221,6 +221,8 @@ pod install
 - [BMScanDefaultDataSource](https://github.com/asiosldh/BMScan/blob/master/BMScanDemo/BMScan/Cotroller/BMScanDefaultDataSource.h),  [cocoapods文档](http://cocoadocs.org/docsets/BMScan/0.0.1/Protocols/BMScanDefaultDataSource.html)
 
 ## Contacts
+> 项目中示例代码暂未处理，只是简单的实现了部分演示，感谢[Color-Picker-for-iOS](https://github.com/hayashi311/Color-Picker-for-iOS)
+
 ##### Sina : [@梁大红](http://weibo.com/3205872327)
 ##### blog : [@idhong](http://idhong.com)
 ##### 有任何问题可与我联系
