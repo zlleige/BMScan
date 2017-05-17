@@ -15,16 +15,21 @@
 [![Weibo](https://img.shields.io/badge/Sina微博-@梁大红-yellow.svg?style=flat)](http://weibo.com/liangdahong) 
 [![GitHub stars](https://img.shields.io/github/stars/asiosldh/BMScan.svg)](https://github.com/asiosldh/BMScan/stargazers)
 ## 效果图 
+<img src="image/6.gif" width="60%">
 <img src="image/1.jpeg" width="40%">
-<img src="image/2.jpeg" width="40%">
+<img src="image/2.jpg"  width="40%">
 <img src="image/3.jpeg" width="40%">
+<img src="image/4.jpg"  width="40%">
+<img src="image/5.jpg"  width="40%">
+
+>其中`半透明区域颜色`，`扫描区域尺寸和位置`，`扫描区域4脚的颜色`，`扫描线条的颜色和样式`均可以自定义。
 
 ## CocoaPods
 CocoaPods is the recommended way to add BMScan to your project.
 Add a pod entry for BMScan to your Podfile.
 
 ```Ruby
-pod 'BMScan', '~> 0.0.1'
+pod 'BMScan', '~> 0.0.3'
 ```		
 Second, install BMScan into your project:
 
@@ -192,6 +197,17 @@ pod install
 - (BMScanLinViewAnimation)scanLinViewAnimationInscanController:(BMScanController *)scanController;
 ```
 
+#### 扫描线条类型
+```c
+/**
+ 扫描线条类型
+
+ @param scanController 扫描控制器
+ @return 扫描线条类型
+ */
+- (BMScanLin)scanLinInscanController:(BMScanController *)scanController;
+```
+
 #### 可识别区域
 
 >可以继于`BMScanDefaultCotroller`不需要考虑，内部会有扫描区域来确定`可识别区域`,如果有特殊要求可实现`BMScanDataSource`协议的如下方法即可
@@ -211,6 +227,8 @@ pod install
 - [BMScanDefaultDataSource](https://github.com/asiosldh/BMScan/blob/master/BMScanDemo/BMScan/Cotroller/BMScanDefaultDataSource.h),  [cocoapods文档](http://cocoadocs.org/docsets/BMScan/0.0.1/Protocols/BMScanDefaultDataSource.html)
 
 ## Contacts
+> 项目中示例代码暂未处理，只是简单的实现了部分演示，感谢[Color-Picker-for-iOS](https://github.com/hayashi311/Color-Picker-for-iOS)
+
 ##### Sina : [@梁大红](http://weibo.com/3205872327)
 ##### blog : [@idhong](http://idhong.com)
 ##### 有任何问题可与我联系

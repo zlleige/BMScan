@@ -39,12 +39,20 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
     }
 }
 
-@interface BMScanController () <AVCaptureMetadataOutputObjectsDelegate, BMScanDelegate>
+@interface BMScanController () <AVCaptureMetadataOutputObjectsDelegate>
 
 @property (strong, nonatomic) AVCaptureSession           *session;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureMetadataOutput    *output;
+/**
+ 数据源代理（主要提供一些配置）
+ */
+@property (weak, nonatomic) id <BMScanDataSource> dataSource;
 
+/**
+ 代理（事件回调）
+ */
+@property (weak, nonatomic) id <BMScanDelegate> delegate;
 @end
 
 @implementation BMScanController
@@ -57,6 +65,7 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
     self = [super init];
     if (self) {
         self.delegate = self;
+        self.dataSource = self;
     }
     return self;
 }
@@ -143,6 +152,7 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 #pragma mark - 自定义delegate
 
 - (void)scanController:(BMScanController *)scanController captureWithValueString:(NSString *)valueString {
+    [self closureScanning];
 }
 
 #pragma mark - 公有方法
