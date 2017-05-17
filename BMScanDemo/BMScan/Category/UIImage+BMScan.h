@@ -11,18 +11,32 @@
 
 @interface UIImage (BMScan)
 
-//改变图片颜色
-- (instancetype)bm_imageWithColor:(UIColor *)color;
-
-/**
- 加载 BMScan.bundle 中的图片
-
- @param name 图片名称
- @return UIImage
- */
-+ (instancetype)bm_loadImageWithName:(NSString *)name;
-
 @property (copy, nonatomic, readonly) NSArray<NSString *> *bm_identifyCodeArray; ///< 识别图片中的二维码/条形码数据
+
+/*!
+ *  @brief 生成条形码
+ *
+ *  @param barCode 条形码字符串
+ *  @param maxSize 最大size
+ *
+ *  @return 生成的条形码
+ */
++ (instancetype)bm_imageWithBarCode:(NSString *)barCode maxSize:(CGSize)maxSize;
+
+/*!
+ *  @brief 生成二维码
+ *
+ *  @param qrCode      二维码字符串
+ *  @param maxSize     最大size
+ *
+ *  @return 生成的二维码
+ */
++ (instancetype)bm_imageWithQRCode:(NSString *)qrCode maxSize:(CGSize)maxSize;
+
+#pragma mark -
+
+- (instancetype)bm_imageWithColor:(UIColor *)color;
++ (instancetype)bm_loadImageWithName:(NSString *)name;
 
 @end
 

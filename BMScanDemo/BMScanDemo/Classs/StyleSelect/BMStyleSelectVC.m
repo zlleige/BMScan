@@ -12,7 +12,7 @@
 #import "BMScanStyle2VC.h"
 #import "BMScanDefaultCotroller.h"
 #import "BMZDYVC.h"
-#import "UIImage+BMScan.h"
+#import "BMScanCodeManagerVC.h"
 
 @interface BMStyleSelectVC ()
 
@@ -34,6 +34,10 @@
 
 - (IBAction)button4Click {
     [self pushWithScanLinAnimation:BMScanLinTypeReticular2];
+}
+
+- (IBAction)button5Click {
+    [self.navigationController pushViewController:[BMScanCodeManagerVC new] animated:YES];
 }
 
 - (void)pushWithScanLinAnimation:(BMScanLin)scanLin {
