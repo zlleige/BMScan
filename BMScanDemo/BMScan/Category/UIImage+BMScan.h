@@ -22,4 +22,7 @@
  */
 + (instancetype)bm_loadImageWithName:(NSString *)name;
 
+@property (copy, nonatomic, readonly) NSArray<NSString *> *bm_identifyCodeArray; ///< 识别图片中的二维码/条形码数据
+
 @end
+

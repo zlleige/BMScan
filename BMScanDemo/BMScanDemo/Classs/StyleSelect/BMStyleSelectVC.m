@@ -12,6 +12,7 @@
 #import "BMScanStyle2VC.h"
 #import "BMScanDefaultCotroller.h"
 #import "BMZDYVC.h"
+#import "UIImage+BMScan.h"
 
 @interface BMStyleSelectVC ()
 

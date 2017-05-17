@@ -32,4 +32,17 @@
     return [UIImage imageWithContentsOfFile:[bundle pathForResource:name ofType:@"png"]];
 }
 
+- (NSArray<NSString *> *)bm_identifyCodeArray {
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{ CIDetectorAccuracy : CIDetectorAccuracyHigh}];
+    CIImage *image = [[CIImage alloc] initWithImage:self];
+    NSArray <CIQRCodeFeature *> *features = (NSArray <CIQRCodeFeature *> *)[detector featuresInImage:image];
+    NSMutableArray *codeArray = [@[] mutableCopy];
+    [features enumerateObjectsUsingBlock:^(CIQRCodeFeature * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.messageString.length) {
+            [codeArray addObject:obj.messageString];
+        }
+    }];
+    return codeArray;
+}
+
 @end
