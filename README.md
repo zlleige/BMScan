@@ -1,6 +1,12 @@
 # BMScan
 > 对系统扫描功能的封装，集成了扫描相关 UI 和自定义识别区域等功能，最简单的使用需要继承于 `BMScanController` 或者 `BMScanDefaultCotroller`即可。     
 
+## 待加入的功能
+- 图片中的二维码识别
+- 生成功二维码
+- 如果您认为有必要的功能，欢迎提出
+- ...
+
  
 [![Version](https://img.shields.io/cocoapods/v/BMScan.svg?style=flat)](http://cocoapods.org/pods/SMCustomViewXIB) 
 [![License](https://img.shields.io/cocoapods/l/SMCustomViewXIB.svg?style=flat)](http://cocoapods.org/pods/SMCustomViewXIB) 
