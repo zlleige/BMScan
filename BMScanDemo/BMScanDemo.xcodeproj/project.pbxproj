@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		312203AA1EB8D967009C7FEB /* BMScan.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 312203A91EB8D967009C7FEB /* BMScan.podspec */; };
+		31863BBA1EE1BA7C0067428B /* BMDefaultUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31863BB91EE1BA7C0067428B /* BMDefaultUIView.xib */; };
 		318D03261ECB4ED300253FD2 /* BMZDYVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 318D03241ECB4ED300253FD2 /* BMZDYVC.m */; };
 		318D03271ECB4ED300253FD2 /* BMZDYVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318D03251ECB4ED300253FD2 /* BMZDYVC.xib */; };
 		318D032B1ECB512800253FD2 /* BMColorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 318D03291ECB512800253FD2 /* BMColorSelectVC.m */; };
@@ -33,8 +34,6 @@
 		32CC42451EB33E420000E9CC /* BMScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CC423D1EB33E420000E9CC /* BMScanController.m */; };
 		32CC42461EB33E420000E9CC /* BMScanDefaultCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CC423F1EB33E420000E9CC /* BMScanDefaultCotroller.m */; };
 		32CC42471EB33E420000E9CC /* BMDefaultUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CC42421EB33E420000E9CC /* BMDefaultUIView.m */; };
-		32CC42481EB33E420000E9CC /* BMDefaultUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32CC42431EB33E420000E9CC /* BMDefaultUIView.xib */; };
-		32F6151C1ECC420700B5530E /* 321E7399-3983-4B45-AA70-E445FEC11387.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F6151B1ECC420700B5530E /* 321E7399-3983-4B45-AA70-E445FEC11387.png */; };
 		FD90D701C9F1CD7D777922BE /* libPods-BMScanDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7468172F5DEADCB16802830E /* libPods-BMScanDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +57,7 @@
 /* Begin PBXFileReference section */
 		3108EEF01EB4E75700A3EABF /* BMScanDefaultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMScanDefaultDataSource.h; sourceTree = "<group>"; };
 		312203A91EB8D967009C7FEB /* BMScan.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BMScan.podspec; path = ../BMScan.podspec; sourceTree = "<group>"; };
+		31863BB91EE1BA7C0067428B /* BMDefaultUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMDefaultUIView.xib; sourceTree = "<group>"; };
 		318D03231ECB4ED300253FD2 /* BMZDYVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMZDYVC.h; sourceTree = "<group>"; };
 		318D03241ECB4ED300253FD2 /* BMZDYVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMZDYVC.m; sourceTree = "<group>"; };
 		318D03251ECB4ED300253FD2 /* BMZDYVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMZDYVC.xib; sourceTree = "<group>"; };
@@ -101,10 +101,8 @@
 		32CC423F1EB33E420000E9CC /* BMScanDefaultCotroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMScanDefaultCotroller.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		32CC42411EB33E420000E9CC /* BMDefaultUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMDefaultUIView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		32CC42421EB33E420000E9CC /* BMDefaultUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BMDefaultUIView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		32CC42431EB33E420000E9CC /* BMDefaultUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMDefaultUIView.xib; sourceTree = "<group>"; };
 		32CC424B1EB33F7C0000E9CC /* BMScanDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMScanDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		32CC424C1EB33F870000E9CC /* BMScanDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BMScanDataSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		32F6151B1ECC420700B5530E /* 321E7399-3983-4B45-AA70-E445FEC11387.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "321E7399-3983-4B45-AA70-E445FEC11387.png"; sourceTree = "<group>"; };
 		486DEB02CB9B917F1724D85A /* Pods-BMScanDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMScanDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BMScanDemo/Pods-BMScanDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		49334EBECDAF960383AAC03B /* libPods-BMScanDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BMScanDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7468172F5DEADCB16802830E /* libPods-BMScanDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BMScanDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +157,6 @@
 		32CC41C91EB336F20000E9CC = {
 			isa = PBXGroup;
 			children = (
-				32F6151B1ECC420700B5530E /* 321E7399-3983-4B45-AA70-E445FEC11387.png */,
 				312203A91EB8D967009C7FEB /* BMScan.podspec */,
 				32CC420F1EB338380000E9CC /* BMScan */,
 				32CC41D41EB336F20000E9CC /* BMScanDemo */,
@@ -301,9 +298,9 @@
 		32CC42401EB33E420000E9CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31863BB91EE1BA7C0067428B /* BMDefaultUIView.xib */,
 				32CC42411EB33E420000E9CC /* BMDefaultUIView.h */,
 				32CC42421EB33E420000E9CC /* BMDefaultUIView.m */,
-				32CC42431EB33E420000E9CC /* BMDefaultUIView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,11 +435,10 @@
 				312203AA1EB8D967009C7FEB /* BMScan.podspec in Resources */,
 				32CC41E01EB336F20000E9CC /* Main.storyboard in Resources */,
 				32CC42231EB339BB0000E9CC /* BMStyleSelectVC.xib in Resources */,
-				32CC42481EB33E420000E9CC /* BMDefaultUIView.xib in Resources */,
 				32CC42281EB33A750000E9CC /* BMScanStyle1VC.xib in Resources */,
+				31863BBA1EE1BA7C0067428B /* BMDefaultUIView.xib in Resources */,
 				318D03271ECB4ED300253FD2 /* BMZDYVC.xib in Resources */,
 				323F11791ECC3F38002E7029 /* BMScanCodeManagerVC.xib in Resources */,
-				32F6151C1ECC420700B5530E /* 321E7399-3983-4B45-AA70-E445FEC11387.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

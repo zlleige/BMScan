@@ -1,5 +1,4 @@
 
 target 'BMScanDemo' do
     pod "Color-Picker-for-iOS", "~> 2.0"
-    pod 'BMScan', '~> 0.0.3'
 end
