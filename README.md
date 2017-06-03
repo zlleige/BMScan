@@ -29,7 +29,7 @@ CocoaPods is the recommended way to add BMScan to your project.
 Add a pod entry for BMScan to your Podfile.
 
 ```Ruby
-pod 'BMScan', '~> 0.0.3'
+pod 'BMScan', '~> 0.1.0'
 ```		
 Second, install BMScan into your project:
 
