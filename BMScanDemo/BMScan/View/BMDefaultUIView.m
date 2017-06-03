@@ -20,7 +20,7 @@
 }
 
 + (instancetype)defaultUIView {
-    BMDefaultUIView *view =  [[[NSBundle bundleForClass:self.class] loadNibNamed:NSStringFromClass(self.class) owner:self options:nil] firstObject];
+    BMDefaultUIView *view = [[[NSBundle bundleForClass:self.class] loadNibNamed:@"BMDefaultUIView" owner:nil options:nil] firstObject];
     [view.areaView addSubview:view.scanImageView1];
     view.scanImageView1.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
