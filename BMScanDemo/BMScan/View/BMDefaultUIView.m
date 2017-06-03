@@ -28,9 +28,8 @@
     NSLayoutConstraint *bottonConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
     NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:view.scanImageView1 attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view.areaView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0];
     [view.areaView addConstraints:@[topConstraint, leftConstraint, bottonConstraint, rightConstraint]];
-    
-    view.scanImageView1.hidden = YES;
-    view.scanfLinView.hidden = YES;
+    view.scanImageView1.hidden  = YES;
+    view.scanfLinView.hidden    = YES;
     view.areaView.clipsToBounds = YES;
     return view;
 }

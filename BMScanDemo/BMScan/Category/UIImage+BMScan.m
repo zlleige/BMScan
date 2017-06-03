@@ -108,8 +108,9 @@
 }
 
 + (instancetype)bm_loadImageWithName:(NSString *)name {
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[BMScanController class]] pathForResource:@"BMScan" ofType:@"bundle"]];
-    return [UIImage imageWithContentsOfFile:[bundle pathForResource:name ofType:@"png"]];
+//    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[BMScanController class]] pathForResource:@"BMScan" ofType:@"bundle"]];
+//    return [UIImage imageWithContentsOfFile:[bundle pathForResource:name ofType:@"png"]];
+    return [UIImage imageNamed:name];
 }
 
 @end
