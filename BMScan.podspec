@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'BMScan'
-s.version      = '0.1.0'
+s.version      = '0.1.1'
 s.summary      = '一款对原始二维码扫描的封装,自定义扫描 UI,使用协议配置'
 s.homepage     = 'https://github.com/asiosldh/BMScan'
 s.license      = 'MIT'
@@ -9,6 +9,7 @@ s.platform     = :ios, '7.0'
 s.source       = {:git => 'https://github.com/asiosldh/BMScan.git', :tag => s.version}
 s.source_files = 'BMScanDemo/BMScan/**/*.{h,m}'
 s.resources     = "BMScanDemo/BMScan/**/*.{png,bundle,xib,nib,db}"
+s.source_files = 'BMScanDemo/BMScan/Protocol/*.{h}'
 s.requires_arc = true
 end
 
