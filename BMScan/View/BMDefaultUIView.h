@@ -10,33 +10,39 @@
 #import <UIKit/UIKit.h>
 #import "BMScanDefaultCotroller.h"
 
+/**
+ 扫描UI
+ */
 @interface BMDefaultUIView : UIView
 
 @property (strong, nonatomic) UIImageView *scanImageView1; ///< 扫描imageView
 @property (assign, nonatomic) BMScanLin scanLin; ///< 扫描线动画类型
 @property (assign, nonatomic) BMScanLinViewAnimation scanLinViewAnimation; ///< 扫描线动画类型
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftLayoutConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthLayoutConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightLayoutConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelBottonLayoutConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint; ///< TopConstraint
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftLayoutConstraint; ///< leftLayoutConstraint
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthLayoutConstraint; ///< widthLayoutConstraint
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightLayoutConstraint; ///< heightLayoutConstraint
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelBottonLayoutConstraint; ///< BottonLayoutConstraint
 @property (weak, nonatomic) IBOutlet UIView *scanfAreaView;
 
-@property (strong, nonatomic) IBOutletCollection(UIView) NSArray <UIView *> *backgroundViewArray;
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray <UIImageView *>*feetViewArray;
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray <UIView *> *backgroundViewArray; ///< backgroundViewArray
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray <UIImageView *>*feetViewArray; ///< feetViewArray
 
-@property (weak, nonatomic) IBOutlet UIImageView *feetImageView1;
-@property (weak, nonatomic) IBOutlet UIImageView *feetImageView2;
-@property (weak, nonatomic) IBOutlet UIImageView *feetImageView3;
-@property (weak, nonatomic) IBOutlet UIImageView *feetImageView4;
-@property (weak, nonatomic) IBOutlet UIImageView *scanfLinView;
-@property (weak, nonatomic) IBOutlet UILabel *scanTitleLabel;
-@property (weak, nonatomic) IBOutlet UIView *areaView;
+@property (weak, nonatomic) IBOutlet UIImageView *feetImageView1; ///< feetImageView1
+@property (weak, nonatomic) IBOutlet UIImageView *feetImageView2; ///< feetImageView2
+@property (weak, nonatomic) IBOutlet UIImageView *feetImageView3; ///< feetImageView3
+@property (weak, nonatomic) IBOutlet UIImageView *feetImageView4; ///< feetImageView4
+@property (weak, nonatomic) IBOutlet UIImageView *scanfLinView; ///< scanfLinView
+@property (weak, nonatomic) IBOutlet UILabel *scanTitleLabel; ///< scanTitleLabel
+@property (weak, nonatomic) IBOutlet UIView *areaView; ///< areaView
 
+/**
+ 创建 扫描UI
+ */
 + (instancetype)defaultUIView;
 
-- (void)startAnimation; ///< 开始的话
-- (void)stopAnimation; ///< 结束的话
+- (void)startAnimation; ///< 开始动画
+- (void)stopAnimation; ///< 结束动画
 
 @end

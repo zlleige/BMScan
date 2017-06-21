@@ -35,7 +35,14 @@
 
 #pragma mark -
 
+/**
+ 由颜色创建image
+ */
 - (instancetype)bm_imageWithColor:(UIColor *)color;
+
+/**
+ 加载image
+ */
 + (instancetype)bm_loadImageWithName:(NSString *)name;
 
 @end

@@ -120,5 +120,4 @@ typedef NS_ENUM(NSUInteger, BMScanLin) {
  */
 - (void)updateScanUI;
 
-
 @end
