@@ -314,11 +314,11 @@
 		32CC423B1EB33E420000E9CC /* Cotroller */ = {
 			isa = PBXGroup;
 			children = (
-				3266642A1EFA1EF9006D81FA /* BMScan.h */,
 				32CC423C1EB33E420000E9CC /* BMScanController.h */,
 				32CC423D1EB33E420000E9CC /* BMScanController.m */,
 				32CC423E1EB33E420000E9CC /* BMScanDefaultCotroller.h */,
 				32CC423F1EB33E420000E9CC /* BMScanDefaultCotroller.m */,
+				3266642A1EFA1EF9006D81FA /* BMScan.h */,
 			);
 			path = Cotroller;
 			sourceTree = "<group>";

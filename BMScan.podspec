@@ -9,7 +9,6 @@ s.platform     = :ios, '7.0'
 s.source       = {:git => 'https://github.com/asiosldh/BMScan.git', :tag => s.version}
 s.source_files = 'BMScan/**/*.{h,m}'
 s.resources    = 'BMScan/**/*.{png,bundle,xib,nib,db}'
-s.public_header_files = 'BMScan/Cotroller/BMScan.h'
 s.requires_arc = true
 end
 
