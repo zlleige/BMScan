@@ -80,6 +80,7 @@
 		323F11751ECC3F38002E7029 /* BMScanCodeManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMScanCodeManagerVC.h; sourceTree = "<group>"; };
 		323F11761ECC3F38002E7029 /* BMScanCodeManagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMScanCodeManagerVC.m; sourceTree = "<group>"; };
 		323F11771ECC3F38002E7029 /* BMScanCodeManagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMScanCodeManagerVC.xib; sourceTree = "<group>"; };
+		3266642A1EFA1EF9006D81FA /* BMScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMScan.h; sourceTree = "<group>"; };
 		328F2CB21EE23A0700347A89 /* bm_scan_image_qr_corner_001_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bm_scan_image_qr_corner_001_@2x.png"; sourceTree = "<group>"; };
 		328F2CB31EE23A0700347A89 /* bm_scan_image_qr_corner_002_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bm_scan_image_qr_corner_002_@2x.png"; sourceTree = "<group>"; };
 		328F2CB41EE23A0700347A89 /* bm_scan_image_qr_corner_003_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bm_scan_image_qr_corner_003_@2x.png"; sourceTree = "<group>"; };
@@ -313,6 +314,7 @@
 		32CC423B1EB33E420000E9CC /* Cotroller */ = {
 			isa = PBXGroup;
 			children = (
+				3266642A1EFA1EF9006D81FA /* BMScan.h */,
 				32CC423C1EB33E420000E9CC /* BMScanController.h */,
 				32CC423D1EB33E420000E9CC /* BMScanController.m */,
 				32CC423E1EB33E420000E9CC /* BMScanDefaultCotroller.h */,
