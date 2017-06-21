@@ -19,7 +19,7 @@
 }
 
 - (void)updateScanUIClick {
-    [self updateScanUI];
+    [self reloadScan];
 }
 
 - (void)scanCaptureWithValueString:(NSString *)valueString {

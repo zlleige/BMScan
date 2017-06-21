@@ -113,11 +113,4 @@ typedef NS_ENUM(NSUInteger, BMScanLin) {
  */
 - (BMScanLin)scanLin;
 
-#pragma mark - 操作
-
-/**
- 刷新扫描UI
- */
-- (void)updateScanUI;
-
 @end

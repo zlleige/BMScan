@@ -168,10 +168,10 @@
     self.scanSettingView.feetImageView4.image = [self.scanSettingView.feetImageView4.image bm_imageWithColor:[self rightBotton]];
     self.scanSettingView.scanfLinView.image   = [self.scanSettingView.scanfLinView.image bm_imageWithColor:[self scanfLin]];
     self.scanSettingView.scanLinViewAnimation = [self scanLinViewAnimation];
-    
     BMScanLin scanLin = [self scanLin];
     self.scanSettingView.scanLin = scanLin;
     if (scanLin == BMScanLinTypeLin) {
+        // 处理有一个问题需要处理
         return;
     }
     if (scanLin == BMScanLinTypeReticular1) {
@@ -181,6 +181,11 @@
     }
     UIColor *color = [self scanfLin];
     self.scanSettingView.scanImageView1.image = [self.scanSettingView.scanImageView1.image bm_imageWithColor:color];
+}
+
+- (void)reloadScan {
+    [self updateScanUI];
+    [super reloadScan];
 }
 
 @end

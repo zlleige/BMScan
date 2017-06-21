@@ -132,17 +132,13 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 #pragma mark - 公有方法
 
 - (void)startScanning {
-    if (self.session.isRunning) {
-        return;
-    }
+
     [self.session startRunning];
     [self.view.layer insertSublayer:self.previewLayer atIndex:0];
 }
 
 - (void)closureScanning {
-    if (!self.session.isRunning) {
-        return;
-    }
+
     [self.session stopRunning];
     [self.previewLayer removeFromSuperlayer];
 }
@@ -152,10 +148,10 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 }
 
 - (CGRect)rectOfInterest {
-    return CGRectMake(0, 0, 1, 1);
+    return self.view.bounds;
 }
 
-- (void)updateRectOfInterest {
+- (void)reloadScan {
     self.output.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:[self rectOfInterest]];
 }
 

@@ -41,8 +41,8 @@
 #pragma mark - 操作
 
 /**
- 刷新可识区域
+ 刷新扫描
  */
-- (void)updateRectOfInterest;
+- (void)reloadScan NS_REQUIRES_SUPER;
 
 @end
