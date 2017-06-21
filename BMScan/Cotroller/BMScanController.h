@@ -14,6 +14,8 @@
  */
 @interface BMScanController : UIViewController
 
+#pragma mark - 扫描响应
+
 /**
  开始扫描
  */
@@ -29,10 +31,14 @@
  */
 - (void)scanCaptureWithValueString:(NSString *)valueString NS_REQUIRES_SUPER;
 
+#pragma mark - 配置信息
+
 /**
  设置可以识别区域
  */
 - (CGRect)rectOfInterest;
+
+#pragma mark - 操作
 
 /**
  刷新可识区域

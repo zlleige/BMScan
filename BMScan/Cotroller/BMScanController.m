@@ -10,6 +10,8 @@
 #import "BMScanController.h"
 #import <AVFoundation/AVFoundation.h>
 
+#pragma mark - 私有C函数
+
 CGRect screenBounds() {
     UIScreen *screen = [UIScreen mainScreen];
     if (![screen respondsToSelector:@selector(fixedCoordinateSpace)]
@@ -44,13 +46,24 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 @property (strong, nonatomic) AVCaptureSession           *session;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureMetadataOutput    *output;
+
 @end
 
 @implementation BMScanController
 
 #pragma mark -
-#pragma mark - init
+
 #pragma mark - 生命周期
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self startScanning];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self closureScanning];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,17 +76,7 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
         NSLog(@"没有相机 或者 没有相机权限");
         return ;
     }
-    [self creatScanning];    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self startScanning];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self closureScanning];
+    [self creatScanning];
 }
 
 #pragma mark - getters setters
@@ -126,8 +129,6 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
     }
 }
 
-#pragma mark - 自定义delegate
-
 #pragma mark - 公有方法
 
 - (void)startScanning {
@@ -144,6 +145,18 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
     }
     [self.session stopRunning];
     [self.previewLayer removeFromSuperlayer];
+}
+
+- (void)scanCaptureWithValueString:(NSString *)valueString {
+    [self closureScanning];
+}
+
+- (CGRect)rectOfInterest {
+    return CGRectMake(0, 0, 1, 1);
+}
+
+- (void)updateRectOfInterest {
+    self.output.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:[self rectOfInterest]];
 }
 
 #pragma mark - 私有方法
@@ -180,18 +193,6 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
                                         AVMetadataObjectTypeAztecCode];
     
     [self.view.layer insertSublayer:self.previewLayer atIndex:0];
-}
-
-- (void)scanCaptureWithValueString:(NSString *)valueString {
-    [self closureScanning];
-}
-
-- (CGRect)rectOfInterest {
-    return CGRectMake(0, 0, 1, 1);
-}
-
-- (void)updateRectOfInterest {
-    self.output.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:[self rectOfInterest]];
 }
 
 @end

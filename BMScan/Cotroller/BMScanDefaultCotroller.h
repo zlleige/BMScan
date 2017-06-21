@@ -37,7 +37,11 @@ typedef NS_ENUM(NSUInteger, BMScanLin) {
  */
 @interface BMScanDefaultCotroller : BMScanController
 
+#pragma mark - 标题label
+
 @property (strong, nonatomic, readonly) UILabel *scanfTitleLabel; ///< 标题label
+
+#pragma mark - 配置信息
 
 /**
  扫描区域 X 值
@@ -109,6 +113,12 @@ typedef NS_ENUM(NSUInteger, BMScanLin) {
  */
 - (BMScanLin)scanLin;
 
+#pragma mark - 操作
+
+/**
+ 刷新扫描UI
+ */
 - (void)updateScanUI;
+
 
 @end

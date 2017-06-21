@@ -14,7 +14,7 @@
 
 @interface BMScanDefaultCotroller ()
 
-@property (strong, nonatomic) BMDefaultUIView *scanSettingView;
+@property (strong, nonatomic) BMDefaultUIView *scanSettingView; ///< 扫描UI
 
 @end
 
@@ -23,10 +23,6 @@
 #pragma mark -
 
 #pragma mark - 生命周期
-
-- (void)dealloc {
-    NSLog(@"dealloc - BMScanDefaultCotroller");
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,13 +42,14 @@
     return self.scanSettingView.scanTitleLabel;
 }
 
-#pragma mark - 公有方法
 - (CGFloat)addConstraint {
     NSLayoutConstraint *c1 = [NSLayoutConstraint constraintWithItem:self.scanSettingView.areaView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.scanSettingView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
     NSLayoutConstraint *c2 = [NSLayoutConstraint constraintWithItem:self.scanSettingView.areaView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scanSettingView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
     [self.scanSettingView addConstraints:@[c1, c2]];
     return 0;
 }
+
+#pragma mark - 公有方法
 
 - (void)startScanning {
     [super startScanning];
@@ -63,8 +60,6 @@
     [super closureScanning];
     [self.scanSettingView stopAnimation];
 }
-
-#pragma mark - 私有方法
 
 - (void)scanCaptureWithValueString:(NSString *)valueString {
     [super scanCaptureWithValueString:valueString];
