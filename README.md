@@ -1,11 +1,15 @@
 # BMScan
 > 对系统扫描功能的封装，集成了扫描相关 UI 和自定义识别区域等功能，最简单的使用需要继承于 `BMScanController` 或者 `BMScanDefaultCotroller`即可。     
 
-## 待加入的功能
-- 图片中的二维码识别
-- 生成功二维码
-- 如果您认为有必要的功能，欢迎提出
-- ...
+## 功能描述
+1. 扫描二维码/条形码
+2. 自定义扫描UI（半透明区域，扫描脚UI，扫描线，扫描动画）均可自定义修改参数
+3. 敏感区域自定义
+4. 闪光灯
+5. 识别相册图片中的二维码
+6. 识别图片中的二维码
+7. 生成功二维码/条形码（待加入）
+8. ...
 
  
 [![Version](https://img.shields.io/cocoapods/v/BMScan.svg?style=flat)](http://cocoapods.org/pods/SMCustomViewXIB) 
@@ -29,7 +33,7 @@ CocoaPods is the recommended way to add BMScan to your project.
 Add a pod entry for BMScan to your Podfile.
 
 ```Ruby
-pod 'BMScan', '~> 0.1.6'
+pod 'BMScan', '~> 0.1.7'
 ```		
 Second, install BMScan into your project:
 
@@ -169,6 +173,21 @@ pod install
  */
 - (CGRect)rectOfInterest;
 ```
+
+##### 动画时间
+
+/**
+动画时间
+*/
+- (CFTimeInterval)animationDuration;
+
+##### 是否隐藏闪光灯按钮 默认打开
+
+/**
+是否隐藏闪光灯按钮 默认打开
+*/
+- (BOOL)hidenLightButton;
+
 
 ##### 刷新可识区域
 
