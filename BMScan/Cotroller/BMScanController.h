@@ -50,6 +50,8 @@ typedef void(^BMPhotoAlbumQRCodeBlock)(NSArray <NSString *> *codeArray);
 
 @property (assign, nonatomic) AVCaptureTorchMode torchMode; ///< torchMode
 
+// 扫描到内容的提示音
+
 @end
 
 #pragma mark -  二维码识别相关
@@ -62,12 +64,12 @@ typedef void(^BMPhotoAlbumQRCodeBlock)(NSArray <NSString *> *codeArray);
 /**
  打开相册识别二维码
  */
-+ (void)identifyPhotoAlbumQRCodeWithResultsBlock:(BMPhotoAlbumQRCodeBlock)resultsBlock;
++ (void)bm_identifyPhotoAlbumQRCodeWithResultsBlock:(BMPhotoAlbumQRCodeBlock)resultsBlock;
 
 /**
  识别图片中的二维码
  */
-+ (NSArray <NSString *> *)codeArrayWithImage:(UIImage *)image;
++ (NSArray <NSString *> *)bm_codeArrayWithImage:(UIImage *)image;
 
 @end
 

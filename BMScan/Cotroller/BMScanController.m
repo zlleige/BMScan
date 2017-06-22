@@ -221,7 +221,7 @@ static char *c2 = "resultsBlockID";
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         BMPhotoAlbumQRCodeBlock block= objc_getAssociatedObject(self, c2);
         if (block) {
-            block([NSObject codeArrayWithImage:image]);
+            block([NSObject bm_codeArrayWithImage:image]);
         }
     }
     objc_removeAssociatedObjects(self);
@@ -236,7 +236,7 @@ static char *c2 = "resultsBlockID";
 
 @implementation  NSObject (BMIdentify)
 
-+ (void)identifyPhotoAlbumQRCodeWithResultsBlock:(BMPhotoAlbumQRCodeBlock)resultsBlock {
++ (void)bm_identifyPhotoAlbumQRCodeWithResultsBlock:(BMPhotoAlbumQRCodeBlock)resultsBlock {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     BMIdentifyObject *identifyObject = [BMIdentifyObject new];
     imagePickerController.delegate = identifyObject;
@@ -256,7 +256,7 @@ static char *c2 = "resultsBlockID";
     return topViewController;
 }
 
-+ (NSArray <NSString *> *)codeArrayWithImage:(UIImage *)image {
++ (NSArray <NSString *> *)bm_codeArrayWithImage:(UIImage *)image {
     NSData *imageData = UIImagePNGRepresentation(image);
     CIImage *ciImage = [CIImage imageWithData:imageData];
     CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy: CIDetectorAccuracyLow}];

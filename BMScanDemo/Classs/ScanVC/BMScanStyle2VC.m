@@ -30,7 +30,7 @@
 }
 
 -  (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [NSObject identifyPhotoAlbumQRCodeWithResultsBlock:^(NSArray<NSString *> *codeArray) {
+    [NSObject bm_identifyPhotoAlbumQRCodeWithResultsBlock:^(NSArray<NSString *> *codeArray) {
         NSLog(@"%@", codeArray);
     }];
 }
