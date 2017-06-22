@@ -35,13 +35,9 @@
 }
 
 - (CABasicAnimation *)getAnimation {
-    // 说明这个动画对象要对CALayer的position属性执行动画
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position.y"];
-    // 动画持续1.5s
     [self layoutIfNeeded];
-    
-    animation.duration = 1.3333f * (CGRectGetHeight(self.scanfAreaView.frame) / 170.0) + 0.3;
-
+    animation.duration = self.animationDuration;
     CGRectGetMidY(self.scanfAreaView.frame);
     CGRectGetMaxY(self.scanfAreaView.frame);
     
@@ -74,13 +70,9 @@
 }
 
 - (CABasicAnimation *)getAnimation1 {
-    
-    // 说明这个动画对象要对CALayer的position属性执行动画
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position.y"];
-    // 动画持续1.5s
     [self.scanfAreaView layoutIfNeeded];
-    
-    animation.duration = 1.3333f * (CGRectGetHeight(self.scanfAreaView.frame) / 170.0) + 0.8;
+    animation.duration = self.animationDuration + 0.5;
     
     CGRectGetMidY(self.scanfAreaView.frame);
     CGRectGetMaxY(self.scanfAreaView.frame);
@@ -136,4 +128,11 @@
         [self.scanImageView1.layer removeAllAnimations];
     }
 }
+
+- (IBAction)openLightButtonClick:(UIButton *)sender {
+    if (self.openLightBlock) {
+        self.openLightBlock();
+    }
+}
+
 @end

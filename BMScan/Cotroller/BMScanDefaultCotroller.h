@@ -109,8 +109,18 @@ typedef NS_ENUM(NSUInteger, BMScanLin) {
 - (BMScanLinViewAnimation)scanLinViewAnimation;
 
 /**
+ 动画时间
+ */
+- (CFTimeInterval)animationDuration;
+
+/**
  扫描线条类型
  */
 - (BMScanLin)scanLin;
+
+/**
+ 是否隐藏闪光灯按钮 默认打开
+ */
+- (BOOL)hidenLightButton;
 
 @end

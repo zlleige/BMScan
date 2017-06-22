@@ -27,6 +27,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateScanUI];
+
+    __weak typeof(self) weakSelf = self;
+    self.scanSettingView.openLightBlock = ^{
+        __strong typeof(weakSelf) self = weakSelf;
+        if (self.torchMode == AVCaptureTorchModeOff) {
+            self.torchMode = AVCaptureTorchModeOn;
+            self.scanSettingView.openLightButton.selected = YES;
+        } else {
+            self.torchMode = AVCaptureTorchModeOff;
+            self.scanSettingView.openLightButton.selected = NO;
+        }
+    };
 }
 
 #pragma mark - getters setters
@@ -58,11 +70,13 @@
 
 - (void)closureScanning {
     [super closureScanning];
+    self.scanSettingView.openLightButton.selected = NO;
     [self.scanSettingView stopAnimation];
 }
 
 - (void)scanCaptureWithValueString:(NSString *)valueString {
     [super scanCaptureWithValueString:valueString];
+    self.scanSettingView.openLightButton.selected = NO;
     [self closureScanning];
 }
 
@@ -123,8 +137,16 @@
     return BMScanLinViewAnimationTypeCAFillModeForwards;
 }
 
+- (CFTimeInterval)animationDuration {
+    return (CGRectGetHeight(self.scanSettingView.areaView.frame) / 200.0) + 0.10;
+}
+
 - (BMScanLin)scanLin {
     return BMScanLinTypeLin;
+}
+
+- (BOOL)hidenLightButton {
+    return NO;
 }
 
 - (void)updateScanUI {
@@ -161,30 +183,38 @@
             obj.image = [obj.image bm_imageWithColor:color2];
         }];
     }
-    
+
     self.scanSettingView.feetImageView1.image = [self.scanSettingView.feetImageView1.image bm_imageWithColor:[self leftTopColor]];
     self.scanSettingView.feetImageView3.image = [self.scanSettingView.feetImageView3.image bm_imageWithColor:[self leftBottonColor]];
     self.scanSettingView.feetImageView2.image = [self.scanSettingView.feetImageView2.image bm_imageWithColor:[self rightTop]];
     self.scanSettingView.feetImageView4.image = [self.scanSettingView.feetImageView4.image bm_imageWithColor:[self rightBotton]];
-    self.scanSettingView.scanfLinView.image   = [self.scanSettingView.scanfLinView.image bm_imageWithColor:[self scanfLin]];
     self.scanSettingView.scanLinViewAnimation = [self scanLinViewAnimation];
     BMScanLin scanLin = [self scanLin];
     self.scanSettingView.scanLin = scanLin;
-    if (scanLin == BMScanLinTypeLin) {
-        // 处理有一个问题需要处理
-        return;
+    self.scanSettingView.animationDuration = [self animationDuration];
+    switch (scanLin) {
+        case BMScanLinTypeLin:
+            self.scanSettingView.scanfLinView.image = [self.scanSettingView.scanfLinView.image bm_imageWithColor:[self scanfLin]];
+            self.scanSettingView.scanImageView1.hidden = YES;
+
+            break;
+        case BMScanLinTypeReticular1:
+            self.scanSettingView.scanImageView1.image = [[UIImage bm_loadImageWithName:@"qrcode_scan_full_net"] bm_imageWithColor:[self scanfLin]];
+            self.scanSettingView.scanfLinView.hidden = YES;
+            break;
+        case BMScanLinTypeReticular2:
+            self.scanSettingView.scanImageView1.image = [[UIImage bm_loadImageWithName:@"qrcode_scan_part_net"] bm_imageWithColor:[self scanfLin]];
+            self.scanSettingView.scanfLinView.hidden = YES;
+            break;
+        default:
+            break;
     }
-    if (scanLin == BMScanLinTypeReticular1) {
-        self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_full_net"];
-    } else if (scanLin == BMScanLinTypeReticular2) {
-        self.scanSettingView.scanImageView1.image = [UIImage bm_loadImageWithName:@"qrcode_scan_part_net"];
-    }
-    UIColor *color = [self scanfLin];
-    self.scanSettingView.scanImageView1.image = [self.scanSettingView.scanImageView1.image bm_imageWithColor:color];
+    self.scanSettingView.openLightButton.hidden = [self hidenLightButton];
 }
 
 - (void)reloadScan {
     [self updateScanUI];
+    [self.scanSettingView startAnimation];
     [super reloadScan];
 }
 

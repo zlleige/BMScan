@@ -29,6 +29,12 @@
     });
 }
 
+-  (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [NSObject identifyPhotoAlbumQRCodeWithResultsBlock:^(NSArray<NSString *> *codeArray) {
+        NSLog(@"%@", codeArray);
+    }];
+}
+
 - (CGFloat)areaX {
     return (kw  - 200)/2.0;
 }
@@ -38,7 +44,6 @@
 }
 
 - (CGFloat)areaWidth {
-    
     return arc4random_uniform(100) + 170;
 }
 
@@ -49,8 +54,9 @@
 - (CGFloat)areaTitleDistanceHeight {
     return arc4random_uniform(30) + 10;
 }
+
 - (UIColor *)areaColor {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:arc4random_uniform(100)/100.0];
+    return [UIColor colorWithRed:0 green:0 blue:0 alpha:arc4random_uniform(30)/100.0];
 }
 - (UIColor *)feetColor {
     return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
@@ -65,7 +71,11 @@
 }
 
 - (BMScanLin)scanLin {
-    return self.scanLinType;
+    return arc4random_uniform(3);
+}
+
+- (BOOL)hidenLightButton {
+    return arc4random_uniform(2);
 }
 
 @end

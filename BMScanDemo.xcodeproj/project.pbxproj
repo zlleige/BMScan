@@ -16,6 +16,8 @@
 		31A4833A1EB5090A005042A9 /* BMScanStyle2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A483381EB5090A005042A9 /* BMScanStyle2VC.m */; };
 		31A4833B1EB5090A005042A9 /* BMScanStyle2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A483391EB5090A005042A9 /* BMScanStyle2VC.xib */; };
 		31C667B71EB579F400AB50D5 /* UIImage+BMScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C667B61EB579F400AB50D5 /* UIImage+BMScan.m */; };
+		32111A0D1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32111A0B1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_off@2x.png */; };
+		32111A0E1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32111A0C1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_on@2x.png */; };
 		323F11781ECC3F38002E7029 /* BMScanCodeManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F11761ECC3F38002E7029 /* BMScanCodeManagerVC.m */; };
 		323F11791ECC3F38002E7029 /* BMScanCodeManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323F11771ECC3F38002E7029 /* BMScanCodeManagerVC.xib */; };
 		328F2CBA1EE23A0700347A89 /* bm_scan_image_qr_corner_001_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F2CB21EE23A0700347A89 /* bm_scan_image_qr_corner_001_@2x.png */; };
@@ -77,6 +79,8 @@
 		31A483391EB5090A005042A9 /* BMScanStyle2VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMScanStyle2VC.xib; sourceTree = "<group>"; };
 		31C667B51EB579F400AB50D5 /* UIImage+BMScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BMScan.h"; sourceTree = "<group>"; };
 		31C667B61EB579F400AB50D5 /* UIImage+BMScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BMScan.m"; sourceTree = "<group>"; };
+		32111A0B1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bm_scan_image_qr_newbarcode_light_off@2x.png"; sourceTree = "<group>"; };
+		32111A0C1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bm_scan_image_qr_newbarcode_light_on@2x.png"; sourceTree = "<group>"; };
 		323F11751ECC3F38002E7029 /* BMScanCodeManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMScanCodeManagerVC.h; sourceTree = "<group>"; };
 		323F11761ECC3F38002E7029 /* BMScanCodeManagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMScanCodeManagerVC.m; sourceTree = "<group>"; };
 		323F11771ECC3F38002E7029 /* BMScanCodeManagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMScanCodeManagerVC.xib; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		328F2CB11EE23A0700347A89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				32111A0B1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_off@2x.png */,
+				32111A0C1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_on@2x.png */,
 				328F2CB21EE23A0700347A89 /* bm_scan_image_qr_corner_001_@2x.png */,
 				328F2CB31EE23A0700347A89 /* bm_scan_image_qr_corner_002_@2x.png */,
 				328F2CB41EE23A0700347A89 /* bm_scan_image_qr_corner_003_@2x.png */,
@@ -457,7 +463,9 @@
 			files = (
 				32CC41E51EB336F20000E9CC /* LaunchScreen.storyboard in Resources */,
 				328F2CC01EE23A0700347A89 /* qrcode_scan_full_net.png in Resources */,
+				32111A0D1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_off@2x.png in Resources */,
 				32CC41E21EB336F20000E9CC /* Assets.xcassets in Resources */,
+				32111A0E1EFB53B20093E340 /* bm_scan_image_qr_newbarcode_light_on@2x.png in Resources */,
 				31A4833B1EB5090A005042A9 /* BMScanStyle2VC.xib in Resources */,
 				32EA779B1EFA11FA003AB56A /* BMScan.podspec in Resources */,
 				328F2CC11EE23A0700347A89 /* qrcode_scan_part_net.png in Resources */,

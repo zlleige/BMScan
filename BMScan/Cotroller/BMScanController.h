@@ -8,6 +8,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+
+typedef void(^BMPhotoAlbumQRCodeBlock)(NSArray <NSString *> *codeArray);
 
 /**
  扫描控制器的基类
@@ -45,4 +48,26 @@
  */
 - (void)reloadScan NS_REQUIRES_SUPER;
 
+@property (assign, nonatomic) AVCaptureTorchMode torchMode; ///< torchMode
+
 @end
+
+#pragma mark -  二维码识别相关
+
+/**
+ 二维码识别相关
+ */
+@interface NSObject (BMIdentify)
+
+/**
+ 打开相册识别二维码
+ */
++ (void)identifyPhotoAlbumQRCodeWithResultsBlock:(BMPhotoAlbumQRCodeBlock)resultsBlock;
+
+/**
+ 识别图片中的二维码
+ */
++ (NSArray <NSString *> *)codeArrayWithImage:(UIImage *)image;
+
+@end
+

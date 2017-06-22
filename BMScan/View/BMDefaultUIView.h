@@ -18,6 +18,7 @@
 @property (strong, nonatomic) UIImageView *scanImageView1; ///< 扫描imageView
 @property (assign, nonatomic) BMScanLin scanLin; ///< 扫描线动画类型
 @property (assign, nonatomic) BMScanLinViewAnimation scanLinViewAnimation; ///< 扫描线动画类型
+@property (assign, nonatomic) CFTimeInterval animationDuration; ///< 动画时间
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint; ///< TopConstraint
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftLayoutConstraint; ///< leftLayoutConstraint
@@ -36,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *scanfLinView; ///< scanfLinView
 @property (weak, nonatomic) IBOutlet UILabel *scanTitleLabel; ///< scanTitleLabel
 @property (weak, nonatomic) IBOutlet UIView *areaView; ///< areaView
+@property (weak, nonatomic) IBOutlet UIButton *openLightButton;
+@property (copy, nonatomic) dispatch_block_t openLightBlock; ///< openLightBlock
 
 /**
  创建 扫描UI
