@@ -9,6 +9,7 @@
 
 #import "BMScanController.h"
 #import <objc/runtime.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #pragma mark - 私有C函数
 
@@ -53,6 +54,14 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 @implementation BMScanController
 
 #pragma mark -
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _audioID = 1110;
+        _audio = YES;
+    }
+    return self;
+}
 
 #pragma mark - 生命周期
 
@@ -138,6 +147,9 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
             [self closureScanning];
             AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects[0];
             [self scanCaptureWithValueString:metadataObject.stringValue];
+        }
+        if (self.audio) {
+            AudioServicesPlaySystemSound(self.audioID);
         }
     }
 }

@@ -51,6 +51,8 @@ typedef void(^BMPhotoAlbumQRCodeBlock)(NSArray <NSString *> *codeArray);
 @property (assign, nonatomic) AVCaptureTorchMode torchMode; ///< torchMode
 
 // 扫描到内容的提示音
+@property (nonatomic, assign) BOOL audio;
+@property (nonatomic, assign) SystemSoundID audioID;
 
 @end
 
