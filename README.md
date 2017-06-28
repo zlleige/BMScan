@@ -8,8 +8,10 @@
 4. 闪光灯
 5. 识别相册图片中的二维码
 6. 识别图片中的二维码
-7. 生成功二维码/条形码（待加入）
-8. ...
+7. 扫描成功语音和震动提示（待加入）
+8. 双击拉近镜头（待加入）
+9. 生成功二维码/条形码（待加入）
+10. ...
 
  
 [![Version](https://img.shields.io/cocoapods/v/BMScan.svg?style=flat)](http://cocoapods.org/pods/SMCustomViewXIB) 
@@ -176,18 +178,21 @@ pod install
 
 ##### 动画时间
 
+```c
 /**
 动画时间
 */
 - (CFTimeInterval)animationDuration;
+```
 
 ##### 是否隐藏闪光灯按钮 默认打开
 
+```c
 /**
 是否隐藏闪光灯按钮 默认打开
 */
 - (BOOL)hidenLightButton;
-
+```
 
 ##### 刷新可识区域
 
