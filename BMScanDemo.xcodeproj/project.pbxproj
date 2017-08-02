@@ -332,9 +332,9 @@
 		32CC42401EB33E420000E9CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3132E5CB1EE2EDD700F9CE93 /* BMDefaultUIView.xib */,
 				32CC42411EB33E420000E9CC /* BMDefaultUIView.h */,
 				32CC42421EB33E420000E9CC /* BMDefaultUIView.m */,
+				3132E5CB1EE2EDD700F9CE93 /* BMDefaultUIView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
