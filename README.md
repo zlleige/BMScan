@@ -212,6 +212,8 @@ pod install
 ```
 
 ### 方法预览
+
+- 文档可能更新不及时，请以具体代码为准。
 - [cocoapods在线文档](http://cocoadocs.org/docsets/BMScan/0.1.3/)
 
 ## Contacts
