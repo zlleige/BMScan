@@ -55,8 +55,8 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 
 #pragma mark -
 
-- (instancetype)init {
-    if (self = [super init]) {
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         _audioID = 1110;
         _audio = YES;
     }
@@ -184,7 +184,6 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 
 // 创建扫描
 - (void)creatScanning {
-
     // 获取摄像设备
     self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
 
@@ -212,7 +211,6 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
                                         AVMetadataObjectTypePDF417Code,
                                         AVMetadataObjectTypeQRCode,
                                         AVMetadataObjectTypeAztecCode];
-    
     [self.view.layer insertSublayer:self.previewLayer atIndex:0];
 }
 
@@ -222,8 +220,8 @@ AVCaptureVideoOrientation videoOrientationFromCurrentDeviceOrientation() {
 
 @end
 
-static char *c1 = "imagePickerControllerID";
-static char *c2 = "resultsBlockID";
+static const void * c1 = &c1;
+static const void * c2 = &c2;
 
 @implementation BMIdentifyObject
 
@@ -253,19 +251,16 @@ static char *c2 = "resultsBlockID";
     BMIdentifyObject *identifyObject = [BMIdentifyObject new];
     imagePickerController.delegate = identifyObject;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    objc_setAssociatedObject(identifyObject, c1, imagePickerController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(identifyObject, c2, resultsBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    objc_setAssociatedObject(identifyObject, _cmd, identifyObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [[self bm_topViewController] presentViewController:imagePickerController animated:YES completion:nil];
-}
+    objc_setAssociatedObject(identifyObject, c1,   imagePickerController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(identifyObject, c2,   resultsBlock,          OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(identifyObject, _cmd, identifyObject,        OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
-+ (UIViewController *)bm_topViewController {
     UIViewController *rootViewController = ((UIWindow *)[[[UIApplication sharedApplication] windows] objectAtIndex:0]).rootViewController;
     UIViewController *topViewController = rootViewController;
     while (topViewController.presentedViewController) {
         topViewController = topViewController.presentedViewController;
     }
-    return topViewController;
+    [rootViewController presentViewController:imagePickerController animated:YES completion:nil];
 }
 
 + (NSArray <NSString *> *)bm_codeArrayWithImage:(UIImage *)image {

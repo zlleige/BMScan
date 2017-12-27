@@ -49,8 +49,8 @@ typedef void(^BMPhotoAlbumQRCodeBlock)(NSArray <NSString *> *codeArray);
 - (void)reloadScan NS_REQUIRES_SUPER;
 
 @property (assign, nonatomic) AVCaptureTorchMode torchMode; ///< torchMode
-@property (nonatomic, assign) BOOL audio; ///< 扫描到内容的提示音
-@property (nonatomic, assign) SystemSoundID audioID; ///< audioID
+@property (nonatomic, assign, getter=isAudio) BOOL audio;   ///< 扫描到内容的提示音
+@property (nonatomic, assign) SystemSoundID audioID;        ///< audioID
 
 @end
 
