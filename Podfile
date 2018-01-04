@@ -1,4 +1,5 @@
-
 target 'BMScanDemo' do
-    pod "Color-Picker-for-iOS", "~> 2.0"
+    pod 'Color-Picker-for-iOS'
+    pod 'SVProgressHUD'
+    pod 'BlocksKit'
 end
